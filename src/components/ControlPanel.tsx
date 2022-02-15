@@ -98,7 +98,7 @@ const Mru = ({ mruFiles }: { mruFiles: string[] }) => {
         setTarget(event.target as HTMLElement);
     };
     // (eventKey: string | null, e: React.SyntheticEvent<unknown>) => void
-    const onSelect = (filePath: string) => {
+    const onSelect = (filePath: string | null) => {
         if (filePath) {
             openFile(filePath);
         } else {
@@ -146,7 +146,6 @@ const Mru = ({ mruFiles }: { mruFiles: string[] }) => {
                     )}
                     <Dropdown.Divider />
                     <Dropdown.Item
-                        /* @ts-ignore This works */
                         onSelect={onSelect}
                         style={{ fontWeight: 700 }}
                     >
